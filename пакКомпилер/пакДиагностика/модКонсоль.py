@@ -26,7 +26,10 @@ class тКонсоль:
       sys.exit()
 
    def Печать(self, текст):
-      print(Style.NORMAL+Fore.WHITE+текст)
+      if type(текст) == str:
+         print(Style.NORMAL+Fore.WHITE+текст)
+      else:
+         self.Ошибка("тКонсоль.Печать(): текст должен быть str, type="+str(type(str)))
    
    def Исх_Печать(self, текст):
       print(Style.NORMAL+Fore.GREEN+текст)

@@ -5,7 +5,6 @@
 
 
 if __name__ == '__main__':
-   #from пакИсходник import тИсходник
    from пакКомпилер import тКомпилер
 
    def main():
