@@ -1,0 +1,53 @@
+
+MODULE _Test;
+(* это комментарий можно пропустить.
+   (* а это вообще вложенный комментарий *)   *)
+
+IMPORT Test,
+   mTask := Task,
+   mAs := Ass, mTs := Task,
+   Constante;
+
+(* в оригинале -- константы разделяются точка с запятой *)
+CONST
+   цСчёт = 1;
+   вСреднее* = 12.899;
+   сСообщ = "Проверка";
+   цЯблоки* = (цСчёт + 10 - 4 / 0.2) * 5;
+
+TYPE
+   tInt32 = INTEGER;
+   
+   тЗвено* = RECORD
+      уЗвСлед : POINTER TO тЗвено;
+      цНомер* : INTEGER;
+   END;
+   
+   тСтрока = ARRAY 255 OF CHAR;
+   
+   туТекст = POINTER TO RECORD (тСтрока)
+      мСтр : ARRAY 1024 OF тСтрока;
+      цПоз : INTEGER;
+      лЛит : CHAR;
+      зЛуч : RECORD
+         вАзимут    : REAL;
+         вСклонение : REAL;
+         вПоток     : REAL;
+      END;
+   END ;
+      
+VAR
+   a : INTEGER;
+
+PROCEDURE Init*(VAR st, al :REAL; zt:INTEGER);
+   BEGIN
+      (* ещё немного разных тегов для более большой разницы с чистыми тегами *)
+      st := al * 2;
+      zt := FLOOR(st) + 253
+   END Init;
+
+BEGIN
+   a := 5
+END _Test.
+
+А это просто текст, который тупо игнорируется. Ха-ха-ха!))
