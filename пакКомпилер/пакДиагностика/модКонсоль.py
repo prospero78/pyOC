@@ -41,8 +41,8 @@ class тКонсоль:
       # это вроде не работает?
       мКонс.ansi.clear_screen()
       # это надо потестить
-      for i in range(300):
-         мКонс.ansi.clear_line()
+      #for i in range(300):
+      #   мКонс.ansi.clear_line()
       print(Style.BRIGHT+Fore.LIGHTWHITE_EX+Back.LIGHTBLUE_EX+текст)
       print(Style.RESET_ALL)
       print()
