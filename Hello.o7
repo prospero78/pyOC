@@ -16,25 +16,32 @@ CONST
    цЯблоки* = (цСчёт + 10 - 4 / 0.2) * 5;
 
 TYPE
-   tInt32 = INTEGER;
-   
-   тЗвено* = RECORD
-      уЗвСлед : POINTER TO тЗвено;
-      цНомер* : INTEGER;
-   END;
-   
-   тСтрока = ARRAY 255 OF CHAR;
-   
-   туТекст = POINTER TO RECORD (тСтрока)
+   туТекст* = POINTER TO 4тСтрока
       мСтр : ARRAY 1024 OF тСтрока;
       цПоз : INTEGER;
       лЛит : CHAR;
       зЛуч : RECORD
          вАзимут    : REAL;
          вСклонение : REAL;
-         вПоток     : REAL;
+         вПоток*     : REAL;
+         зЛуч* : RECORD
+            вАзимут*    : REAL;
+            вСклонение : REAL;
+            вПоток     : REAL;
+         END;
       END;
    END ;
+   
+   тЗвено* = RECORD (тСписок)
+      уЗвСлед : POINTER TO тЗвено;
+      цНомер* : INTEGER;
+   END;
+   
+   tInt32 = INTEGER;
+   
+   тСтрока = ARRAY 255 OF CHAR;
+   
+   
       
 VAR
    a : INTEGER;
