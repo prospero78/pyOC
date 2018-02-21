@@ -5,7 +5,7 @@ MODULE _Test;
 
 IMPORT Test,
    mTask := Task,
-   mAs := Ass, mTs := Task,
+   мЧт := Ass, mTs := Task,
    Constante;
 
 (* в оригинале -- константы разделяются точка с запятой *)
@@ -16,7 +16,7 @@ CONST
    цЯблоки* = (цСчёт + 10 - 4 / 0.2) * 5;
 
 TYPE
-   туТекст* = POINTER TO 4тСтрока
+   туТекст* = POINTER TO мЧт.тСтрока
       мСтр : ARRAY 1024 OF тСтрока;
       цПоз : INTEGER;
       лЛит : CHAR;
