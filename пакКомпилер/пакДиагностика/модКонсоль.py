@@ -35,9 +35,9 @@ class тКонсоль:
       print(Style.NORMAL+Fore.GREEN+текст)
 
    def Шапка(self):
-      текст = "\n               Oberon-07 Compiler       \n"
+      текст = "\n               " + self.рес.app['name'] + "       \n"
       текст+= "         KBK Techniks ltd. 2018 BSD-2   \n"
-      текст+= "         "+self.рес.дата+" "+self.рес.время+" build "+self.рес.сборка+"     "
+      текст+= "         "+self.рес.app['date']+" "+self.рес.app['time']+" build "+self.рес.app['build']+"     "
       # это вроде не работает?
       мКонс.ansi.clear_screen()
       # это надо потестить
