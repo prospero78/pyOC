@@ -29,14 +29,14 @@ class тКонсоль:
 			print(Style.NORMAL+Fore.WHITE+текст)
 		else:
 			self.Ошибка("тКонсоль.Печать(): текст должен быть str, type="+str(type(str)))
-	
+
 	def Исх_Печать(self, текст):
 		print(Style.NORMAL+Fore.GREEN+текст)
 
 	def Шапка(self):
 		текст = "\n               " + self.рес.app['name'] + "       \n"
-		текст+= "         KBK Techniks ltd. 2018 BSD-2   \n"
-		текст+= "         "+self.рес.app['date']+" "+self.рес.app['time']+" "+self.рес.app['build']+" " +self.рес.app['build_num']+"     "
+		текст+= "         KBK Techniks ltd. 2018 BSD-2     \n"
+		текст+= "         "+self.рес.app['date']+" "+self.рес.app['time']+" "+self.рес.app['build']+" " +self.рес.app['build_num']+"      "
 		# это вроде не работает?
 		мКонс.ansi.clear_screen()
 		# это надо потестить
