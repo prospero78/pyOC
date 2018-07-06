@@ -8,40 +8,40 @@ if True:
 	import sys
 
 class тКонсоль:
-	def __init__(self, root):
-		self.__root = root
-		self.рес = root.рес
+	def __init__(сам, пКорень):
+		сам.__корень = пКорень
+		сам.рес = пКорень.рес
 		мКонс.init(autoreset=True)
 		мКонс.ansi.set_title("Oberon-07 compiler")
-		self.Шапка()
-		#self.Печать("Консоль активирована")
+		сам.Шапка()
+		#сам.Печать("Консоль активирована")
 
-	def Проверить(self, усл, текст):
-		if not усл:
-			self.Ошибка(текст)
+	def Проверить(сам, пбУсл, пСообщ):
+		if not пбУсл:
+			сам.Ошибка(пСообщ)
 
-	def Ошибка(self, текст):
-		print(Style.NORMAL+Fore.LIGHTYELLOW_EX+Back.RED+текст)
+	def Ошибка(сам, пСообщ):
+		print(Style.NORMAL+Fore.LIGHTYELLOW_EX+Back.RED+пСообщ)
 		sys.exit()
 
-	def Печать(self, текст):
-		if type(текст) == str:
-			print(Style.NORMAL+Fore.WHITE+текст)
+	def Печать(сам, пСообщ):
+		if type(пСообщ) == str:
+			print(Style.NORMAL+Fore.WHITE+пСообщ)
 		else:
-			self.Ошибка("тКонсоль.Печать(): текст должен быть str, type="+str(type(str)))
+			сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
 
-	def Исх_Печать(self, текст):
-		print(Style.NORMAL+Fore.GREEN+текст)
+	def Исх_Печать(сам, пСообщ):
+		print(Style.NORMAL+Fore.GREEN+пСообщ)
 
-	def Шапка(self):
-		текст = "\n               " + self.рес.app['name'] + "       \n"
-		текст+= "         KBK Techniks ltd. 2018 BSD-2     \n"
-		текст+= "         "+self.рес.app['date']+" "+self.рес.app['time']+" "+self.рес.app['build']+" " +self.рес.app['build_num']+"      "
+	def Шапка(сам):
+		стрСообщ = "\n               " + сам.рес.app['name'] + "       \n"
+		стрСообщ+= "         KBK Techniks ltd. 2018 BSD-2     \n"
+		стрСообщ+= "         "+сам.рес.app['date']+" "+сам.рес.app['time']+" "+сам.рес.app['build']+" " +сам.рес.app['build_num']+"      "
 		# это вроде не работает?
 		мКонс.ansi.clear_screen()
 		# это надо потестить
 		#for i in range(300):
 		#   мКонс.ansi.clear_line()
-		print(Style.BRIGHT+Fore.LIGHTWHITE_EX+Back.LIGHTBLUE_EX+текст)
+		print(Style.BRIGHT+Fore.LIGHTWHITE_EX+Back.LIGHTBLUE_EX+стрСообщ)
 		print(Style.RESET_ALL)
 		print()
