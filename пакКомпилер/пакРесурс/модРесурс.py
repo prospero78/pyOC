@@ -4,19 +4,19 @@
 """
 
 class тРесурс:
-	def __init__(сам, корень):
-		сам.__корень = корень
+	def __init__(сам, пКорень):
+		сам.__корень = пКорень
 		сам.app     = {}
 		сам.winMain = {}
 		сам.Шапка_Уст()
 		сам.Язык_Уст()
-	
+
 	def Шапка_Уст(сам):
 		сам.app['date']  = "2018-07-05"
 		сам.app['time']  = "22:16"
 		сам.app['build'] = "Build"
 		сам.app['build_num'] = "078"
-		
+
 	def Язык_Уст(сам, lang = "ru"):
 		if True:
 			сам.app['name'] = 'Oberon-07 Compiler'
@@ -24,7 +24,7 @@ class тРесурс:
 			сам.winMain['mnuFile'] = 'File'
 			сам.winMain['mnuExit'] = 'Exit'
 			сам.winMain['mnuOpen'] = 'Open...'
-			
+
 		if lang == "ru":
 			сам.Компиляция = "Компиляция"
 			сам.app['name']  = 'Компилятор Oberon-07'
