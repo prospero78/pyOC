@@ -29,7 +29,7 @@ TYPE
 				вПоток     : REAL;
 			END;
 		END;
-	END ;
+	END;
 	
 	тЗвено* = RECORD (тСписок)
 		уЗвСлед : POINTER TO тЗвено;
@@ -40,8 +40,6 @@ TYPE
 	
 	тСтрока = ARRAY 255 OF CHAR;
 	
-	
-		
 VAR
 	a : INTEGER;
 
