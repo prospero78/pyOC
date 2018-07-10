@@ -15,6 +15,12 @@ CONST
 	цЯблоки* = (цСчёт + 10 - 4 / 0.2) * 5;
 
 TYPE
+	tInt32 = INTEGER;
+	
+	тСтрока = ARRAY 255 OF CHAR;
+	
+	тТекст = ARRAY 255, 84 OF CHAR;
+	
 	туТекст* = POINTER TO мЧт.тСтрока
 		мСтр : ARRAY 1024 OF тСтрока;
 		цПоз : INTEGER;
@@ -35,10 +41,6 @@ TYPE
 		уЗвСлед : POINTER TO тЗвено;
 		цНомер* : INTEGER;
 	END;
-	
-	tInt32 = INTEGER;
-	
-	тСтрока = ARRAY 255 OF CHAR;
 	
 VAR
 	a : INTEGER;
