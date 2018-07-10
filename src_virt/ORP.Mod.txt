@@ -8,8 +8,10 @@ IMPORT Texts, Oberon, ORS, ORB, ORG;
 	 ORG to produce binary code. ORP performs type checking and data allocation.
 	 Parser is target-independent, except for part of the handling of allocations.*)
 
-TYPE PtrBase = POINTER TO PtrBaseDesc;
-	 PtrBaseDesc = RECORD  (*list of names of pointer base types*)
+TYPE
+	PtrBase = POINTER TO PtrBaseDesc;
+
+	PtrBaseDesc = RECORD  (*list of names of pointer base types*)
 		name: ORS.Ident;
 		type: ORB.Type;
 		next: PtrBase

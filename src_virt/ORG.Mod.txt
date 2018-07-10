@@ -20,11 +20,12 @@ CONST WordSize* = 4;
 	BR = 0; BLR = 1; BC = 2; BL = 3;
 	MI = 0; PL = 8; EQ = 1; NE = 9; LT = 5; GE = 13; LE = 6; GT = 14;
 
-TYPE Item* = RECORD
-	mode*: INTEGER;
-	type*: ORB.Type;
-	a*, b*, r: LONGINT;
-	rdo*: BOOLEAN  (*read only*)
+TYPE
+	Item* = RECORD
+		mode*: INTEGER;
+		type*: ORB.Type;
+		a*, b*, r: LONGINT;
+		rdo*: BOOLEAN  (*read only*)
 	END;
 
   (* Item forms and meaning of fields:
