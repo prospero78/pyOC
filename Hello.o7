@@ -27,7 +27,9 @@ TYPE
 
 	тЗвено* = RECORD (тСписок)
 		цНомер* : INTEGER;
-		уЗвСлед : POINTER TO тЗвено;
+		бЕсть   : BOOLEAN;
+		лНазван : ARRAY 2, 63 OF CHAR;
+		уЗвСлед : POINTER TO тЗвено
 	END;
 
 	туТекст* = POINTER TO мЧт.тСтрока
@@ -41,7 +43,7 @@ TYPE
 			зЛуч* : RECORD
 				вАзимут*    : REAL;
 				вСклонение : REAL;
-				вПоток     : REAL;
+				лПоток     : ARRAY 2, 63 OF CHAR
 			END;
 		END;
 	END;
