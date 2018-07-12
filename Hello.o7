@@ -26,8 +26,8 @@ TYPE
 	тЗапПредок* = RECORD(тЗапПусто) END;
 
 	тЗвено* = RECORD (тСписок)
-		уЗвСлед : POINTER TO тЗвено;
 		цНомер* : INTEGER;
+		уЗвСлед : POINTER TO тЗвено;
 	END;
 
 	туТекст* = POINTER TO мЧт.тСтрока
