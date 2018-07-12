@@ -3,10 +3,10 @@ MODULE ORP;
 
 IMPORT Texts, Oberon, ORS, ORB, ORG;
   (*Author: Niklaus Wirth, 2014.
-	 Parser of Oberon-RISC compiler. Uses Scanner ORS to obtain symbols (tokens),
-	 ORB for definition of data structures and for handling import and export, and
-	 ORG to produce binary code. ORP performs type checking and data allocation.
-	 Parser is target-independent, except for part of the handling of allocations.*)
+	Parser of Oberon-RISC compiler. Uses Scanner ORS to obtain symbols (tokens),
+	ORB for definition of data structures and for handling import and export, and
+	ORG to produce binary code. ORP performs type checking and data allocation.
+	Parser is target-independent, except for part of the handling of allocations.*)
 
 TYPE
 	PtrBase = POINTER TO PtrBaseDesc;
