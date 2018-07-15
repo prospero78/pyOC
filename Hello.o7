@@ -55,6 +55,19 @@ TYPE
 
 VAR
 	a : INTEGER;
+	b: tInt32;
+	c: INTEGER;
+	d: tInt32;
+	des: ARRAY 22, 45 OF мЧт.тБуф;
+	des2*: RECORD
+		цПоз*: INTEGER;
+		вДробь: REAL;
+		сИмя: ARRAY 255 OF CHAR;
+		зЛуч*: RECORD (* Проверка на переносимость комментариев *)
+			цЛуч1*: INTEGER;
+			цЛуч2: tInt32
+		END;
+	END;
 
 PROCEDURE Init*(VAR st, al :REAL; zt:INTEGER);
 	BEGIN
