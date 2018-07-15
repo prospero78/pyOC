@@ -17,6 +17,8 @@ CONST
 TYPE
 	tInt32* = INTEGER;
 
+	tpInt32* = POINTER TO INTEGER;
+
 	тСтрока = ARRAY 201 OF CHAR;
 
 	тТекст* = ARRAY 255, 84 OF CHAR;
@@ -29,7 +31,7 @@ TYPE
 		цНомер* : INTEGER;
 		бЕсть   : BOOLEAN;
 		лНазван : ARRAY 2, 63 OF CHAR;
-		уЗвСлед : POINTER TO тЗвено
+		уЗвСлед : tpInt32
 	END;
 
 	туТекст* = POINTER TO мЧт.тСтрока
