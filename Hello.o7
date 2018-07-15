@@ -44,11 +44,11 @@ TYPE
 		зЛуч : RECORD
 			вАзимут    : REAL;
 			вСклонение : REAL;
-			вПоток*     : REAL;
-			зЛуч* : RECORD
-				вАзимут*    : REAL;
-				вСклонение : REAL;
-				лПоток     : ARRAY 2, 63 OF CHAR
+			цПоток*     : INTEGER;
+			зЛуч2* : RECORD
+				вАзимут2*    : REAL;
+				нСклонение2 : SET;
+				лПоток2     : ARRAY 2, 63 OF CHAR;
 			END;
 		END;
 	END;
