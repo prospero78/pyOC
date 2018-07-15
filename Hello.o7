@@ -17,11 +17,13 @@ CONST
 TYPE
 	tInt32* = INTEGER;
 
-	tpInt32* = POINTER TO INTEGER;
+	tpBigInt* = POINTER TO INTEGER;
+
+	tpInt300* = POINTER TO tInt32;
 
 	тСтрока = ARRAY 201 OF CHAR;
 
-	тТекст* = ARRAY 255, 84 OF CHAR;
+	тТекст* = ARRAY 255, 84 OF тСтрока;
 
 	тЗапПусто = RECORD END;
 
@@ -31,10 +33,11 @@ TYPE
 		цНомер* : INTEGER;
 		бЕсть   : BOOLEAN;
 		лНазван : ARRAY 2, 63 OF CHAR;
+		лГлава* : ARRAY 2, 63 OF тСтрока;
 		уЗвСлед : tpInt32
 	END;
 
-	туТекст* = POINTER TO мЧт.тСтрока
+	туТекст* = POINTER TO RECORD (мЧт.тСтрока)
 		мСтр : ARRAY 1024 OF тСтрока;
 		цПоз : INTEGER;
 		лЛит : CHAR;
