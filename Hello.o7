@@ -69,11 +69,41 @@ VAR
 		END;
 	END;
 
+PROCEDURE Test(st, al :REAL; VAR zt:INTEGER);
+	CONST
+		dres = 5;
+		tres = 3;
+	TYPE
+		tpBuf = POINTER TO мЧт.тБуф;
+		tBuffer = RECORD
+			iPos: INTEGER;
+			sRate: CHAR
+		END;
+	VAR
+		dlt: INTEGER;
+		dll: мЧт.тБуф;
+		бПривет: BOOLEAN;
+	PROCEDURE Cargo(VAR st, al :REAL; zt:INTEGER);
+		BEGIN
+			(* ещё немного разных тегов для более большой разницы с чистыми тегами *)
+			st := al * 2;
+			zt := FLOOR(st) + 253;
+			Test
+		END Cargo;
+
+	BEGIN
+		(* ещё немного разных тегов для более большой разницы с чистыми тегами *)
+		st := al * 2;
+		Cargo;
+		zt := FLOOR(st) + 253
+	END Test;
+
 PROCEDURE Init*(VAR st, al :REAL; zt:INTEGER);
 	BEGIN
 		(* ещё немного разных тегов для более большой разницы с чистыми тегами *)
 		st := al * 2;
-		zt := FLOOR(st) + 253
+		zt := FLOOR(st) + 253;
+		Test
 	END Init;
 
 BEGIN
