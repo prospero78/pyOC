@@ -40,7 +40,7 @@ TYPE
 	туТекст* = POINTER TO RECORD (мЧт.тСтрока)
 		мСтр : ARRAY 1024 OF тСтрока;
 		цПоз : INTEGER;
-		лЛит : CHAR;
+		лЛит : мБуф.тБуф;
 		зЛуч : RECORD
 			вАзимут    : REAL;
 			вСклонение : REAL;
@@ -57,7 +57,7 @@ VAR
 	a : INTEGER;
 	b: tInt32;
 	c: INTEGER;
-	d: tInt32;
+	d: мБуф.тБуф;
 	des: ARRAY 22, 45 OF мЧт.тБуф;
 	des2*: RECORD
 		цПоз*: INTEGER;
@@ -69,7 +69,7 @@ VAR
 		END;
 	END;
 
-PROCEDURE Test(st, al :REAL; VAR zt:INTEGER);
+PROCEDURE Test(st, al :REAL; VAR zt:INTEGER):мЧт.Буф;
 	CONST
 		dres = 5;
 		tres = 3;
