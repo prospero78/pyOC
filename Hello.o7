@@ -3,7 +3,7 @@ MODULE _Test;
 	(* а это вообще вложенный комментарий *)   *)
 
 IMPORT Test,
-	mTask := Task,
+	mTask := pakSys.Task,
 	мЧт := Ass, mTs := Task,
 	Constante;
 
