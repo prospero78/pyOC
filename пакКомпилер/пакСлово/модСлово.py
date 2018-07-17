@@ -39,7 +39,7 @@ class тСлово:
 	запр_имя     = ["MODULE", "IMPORT", "CONST", "TYPE", "BOOLEAN", "BYTE", \
 							"INTEGER", "CHAR", "SET", "REAL", "VAR", "POINTER", "TO", \
 							"ARRAY", "OF", "BEGIN", "END", "PROCEDURE", "FOR", \
-							"WHILE", "DO", "RECORD" ]
+							"WHILE", "DO", "RECORD", "IS" ]
 	def __init__(сам, пИсх, пСтрока):
 		def пСлово_Проверить():
 			бУсл = type(пСтрока) == str
