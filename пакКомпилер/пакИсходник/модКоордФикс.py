@@ -31,11 +31,11 @@ class тКоордФикс:
 		сам.__цПоз = пцПоз
 
 	@property
-	def стр(сам):
+	def цСтр(сам):
 		return сам.__цСтр
 
 	@property
-	def поз(сам):
+	def цПоз(сам):
 		return сам.__цПоз
 
 	def __str__(сам):
