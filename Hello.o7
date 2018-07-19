@@ -29,6 +29,8 @@ TYPE
 
 	тЗапПредок* = RECORD(тЗапПусто) END;
 
+	тЗапПредок2 = POINTER TO тЗапПредок;
+
 	тЗвено* = RECORD (тСписок)
 		цНомер* : INTEGER;
 		бЕсть   : BOOLEAN;
