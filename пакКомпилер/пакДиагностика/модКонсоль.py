@@ -46,4 +46,4 @@ class тКонсоль:
 		print(Style.BRIGHT+Fore.LIGHTWHITE_EX+Back.LIGHTBLUE_EX+стрСообщ)
 		print(Style.RESET_ALL)
 		print()
-		time.sleep(2)
+		#time.sleep(2)
