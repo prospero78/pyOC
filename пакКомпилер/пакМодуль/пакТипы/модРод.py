@@ -14,7 +14,7 @@ class тРод:
 	сПроцедура = "PROCEDURE"
 	сБезПредка = "без_предка"
 	сБулево = "BOOLEAN"
-	тип_встроен = ["BOOLEAN", "CHAR", "INTEGER", "REAL", "BYTE", "SET"]
+	тип_встроен = [сБулево, "CHAR", "INTEGER", "REAL", "BYTE", "SET"]
 
 	def __init__(сам):
 		pass
