@@ -21,6 +21,10 @@ TYPE
 
 	tpInt300* = POINTER TO tInt32;
 
+	SetCompilerFlagProc* = PROCEDURE(VAR pragma, tiles, block: ARRAY OF CHAR);
+	NotifyErrorProc* = PROCEDURE(pos: INTEGER; msg: ARRAY OF CHAR):BOOLEAN;
+
+
 	тСтрока = ARRAY 201 OF CHAR;
 
 	тТекст* = ARRAY 255, 84 OF тСтрока;
