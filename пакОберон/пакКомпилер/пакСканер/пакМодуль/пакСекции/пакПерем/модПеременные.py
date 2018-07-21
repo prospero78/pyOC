@@ -6,7 +6,7 @@
 
 if True:
 	from ....пакСлово import тСлово
-	from ...пакПоле.модПоле import тПоле
+	from ....пакПоле import тПоле
 	from ..пакТипы.модРод import тРод
 	from ...пакСекция import тСекцияПерем
 
