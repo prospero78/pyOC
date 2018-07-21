@@ -6,7 +6,7 @@
 if True:
 	from ....пакСлово import тСлово
 	from .модРод import тРод
-	from ...пакПоле.модПоле import тПоле
+	from ....пакПоле import тПоле
 	from . модТипБазовый import тТипБазовый
 
 class тТипЗапись(тТипБазовый):
