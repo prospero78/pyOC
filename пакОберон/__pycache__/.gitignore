@@ -1,2 +1,4 @@
 *.cpython-36.pyc
 *.pyc
+*.nbc
+*.nbi
