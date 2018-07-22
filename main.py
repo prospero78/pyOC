@@ -2,6 +2,8 @@
 # coding: utf8
 '''
 Пробуем сделать генератор AST для Оберона-07
+from numba import jit
+@jit(nogil=True, cache=True)
 '''
 
 from пакОберон import тОберон
