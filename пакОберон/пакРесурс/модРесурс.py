@@ -13,9 +13,9 @@ class тРесурс:
 
 	def Шапка_Уст(сам):
 		сам.app['date']  = "2018-07-22"
-		сам.app['time']  = "19:19"
+		сам.app['time']  = "19:36"
 		сам.app['build'] = "Build"
-		сам.app['build_num'] = "503"
+		сам.app['build_num'] = "691"
 
 	def Язык_Уст(сам, lang = "ru"):
 		if True:
