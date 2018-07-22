@@ -3,8 +3,8 @@ MODULE _Test;
 	(* а это вообще вложенный комментарий *)   *)
 
 IMPORT Test,
-	mTask := pakSys.Task,
-	мЧт := Ass, mTs := Task,
+	mTask := pakSys.modTask,
+	мЧт := modAss, mTs := pakJob.modTask,
 	Constante;
 
 (* в оригинале -- константы разделяются точка с запятой *)
