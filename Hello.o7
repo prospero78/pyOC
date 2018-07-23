@@ -16,11 +16,11 @@ CONST
 	цЯблоки* = (цСчёт+10-4/0.28)*5; (* специально слепленные цифры и знаки для теста *)
 
 TYPE
-	tInt32* = INTEGER;
+	tInt32 = INTEGER;
 
 	tpBigInt* = POINTER TO INTEGER;
 
-	tpInt300* = POINTER TO tInt32;
+	tpInt300 = POINTER TO tInt32;
 
 	SetCompilerFlagProc* = PROCEDURE(VAR pragma, tiles, block: ARRAY OF CHAR);
 	NotifyErrorProc* = PROCEDURE(pos: INTEGER; msg: ARRAY OF CHAR):BOOLEAN;
