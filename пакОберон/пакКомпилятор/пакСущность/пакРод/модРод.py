@@ -15,7 +15,7 @@ class тРод:
 	сБезПредка = "без_предка"
 	сЧастный = "частный"
 	сБулево = "BOOLEAN"
-	тип_встроен = [сБулево, "CHAR", "INTEGER", "REAL", "BYTE", "SET"]
+	тип_встроен = [сБулево, "SET", "BYTE", "CHAR", "INTEGER", "REAL"]
 
 	def __init__(сам):
 		pass
