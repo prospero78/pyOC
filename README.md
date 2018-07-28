@@ -1,7 +1,20 @@
 # pyOC
 Oberon-07 compiler with python3
 
-Stage 1: write on python (25%)
+Stage 1: write on python (15%)
+
+Section analiz:
+
+  * MODULE (+)
+  * IMPORT (+)
+  * TYPE   (+)
+  * VAR    (-)
+  * PROCEDURE(-)
+  * BEGIN (in MODULE) (-)
+
+Expression: (-)
+
+Code generation: (-)
 
 Stage 2: write on Oberon (0%)
 
