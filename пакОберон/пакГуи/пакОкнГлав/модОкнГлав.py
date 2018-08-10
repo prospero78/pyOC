@@ -2,7 +2,7 @@
 Предоставляет класс главного окна
 """
 
-from tkinter.tix import Tk as тОкно, Frame as тРамка
+from tkinter.tix import Tk as тОкно, Frame as тРамка #type:ignore
 from .модРамкаНиж import тРамкаНиж
 from .модРамкаВерх import тРамкаВерх
 from .модРамкаСред import тРамкаСред
@@ -17,6 +17,6 @@ class тОкнГлав(тОкно):
       self.рамкаВерх = тРамкаВерх(root, self)
       self.рамкаСред = тРамкаСред(root, self)
       self.рамкаНиж = тРамкаНиж(root, self)
-      
+
    def Пуск(self):
       self.mainloop()

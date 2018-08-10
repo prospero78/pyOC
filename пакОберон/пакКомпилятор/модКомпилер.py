@@ -10,7 +10,7 @@ if True:
 	from .пакРазбор import тРазбор
 
 class тКомпилер:
-	def __init__(сам):
+	def __init__(сам)->None:
 		pass
 
 

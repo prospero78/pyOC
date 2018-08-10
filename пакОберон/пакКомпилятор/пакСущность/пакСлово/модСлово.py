@@ -10,7 +10,7 @@
 """
 if True:
 	from пакОберон.пакКомпилятор.пакСущность.пакКоорд import тКоордФикс
-	from numba import jit
+	from numba import jit #type:ignore
 
 class тСлово:
 	"""

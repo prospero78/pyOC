@@ -3,7 +3,7 @@
 Подсвечивает разными цветами разные типы.
 """
 if True:
-	import colorama as мКонс
+	import colorama as мКонс #type:ignore
 	from colorama import Fore, Back, Style
 	import sys
 	import time
