@@ -1,9 +1,9 @@
 # pyOC
-Oberon-07 compiler with python3
+Транслятор Oberon-07 в исходный код python3.7
 
-Stage 1: write on python (15%)
+##Этап 1: написать на python (15%)
 
-Section analiz:
+Анализ секций модулей:
 
   * MODULE (+)
   * IMPORT (+)
@@ -12,15 +12,16 @@ Section analiz:
   * PROCEDURE(-)
   * BEGIN (in MODULE) (-)
 
-Expression: (-)
+Выражения: (-)
 
-Code generation: (-)
+Трансляция кода: (-)
 
-Stage 2: write on Oberon (0%)
+##Этап 2: переписать на самом Oberon (0%)
 
 
-# Requered:
+# Требуемые пакеты:
 
-1. numba
-2. LLVM
-3. llvmpy
+1. LLVM 6 -- JIT
+2. llvmpy -- трансляция кода в LLVM asm
+3. numba -- ускорение кода python
+4. mypy -- статический анализ кода
