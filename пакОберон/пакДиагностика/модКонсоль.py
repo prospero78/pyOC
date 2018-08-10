@@ -5,7 +5,7 @@
 if True:
 	import colorama as мКонс #type:ignore
 	from colorama import Fore, Back, Style
-	import sys
+	import sys, os
 	import time
 
 class тКонсоль:
@@ -35,6 +35,10 @@ class тКонсоль:
 		print(Style.NORMAL+Fore.GREEN+пСообщ)
 
 	def Шапка(сам):
+		if sys.platform == "win32":
+			os.system("cls")
+		else:
+			os.system("clear")
 		стрСообщ = "\n               " + сам.рес.app['name'] + "       \n"
 		стрСообщ+= "         KBK Techniks ltd. 2018 BSD-2     \n"
 		стрСообщ+= "         "+сам.рес.app['date']+" "+сам.рес.app['time']+" "+сам.рес.app['build']+" " +сам.рес.app['build_num']+"      "
