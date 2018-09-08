@@ -2,14 +2,18 @@
 Рамка содержит элементы средней части окна.
 """
 
-from tkinter import Frame as тРамка, Text as тТекст
+from tkinter import Frame as тРамка, Text as тТекст, Scrollbar as тСкроллБар
 
 class тРамкаСред(тРамка):
-   def __init__(self, root, master):
-      self.__root = root
-      self.__master = master
-      тРамка.__init__(self, master)
-      self.pack(expand=True, fill='both')
-      
-      self.текстКод = тТекст(self)
-      self.текстКод.pack(expand=True, fill='both')
+	def __init__(сам, root, master):
+		сам.__root = root
+		сам.__master = master
+		тРамка.__init__(сам, master)
+		сам.pack(expand=True, fill='both')
+
+		сам.текстКод = тТекст(сам, font="Consolas 11")
+		скроллВерт   = тСкроллБар(сам, command=сам.текстКод.yview)
+		скроллВерт.pack(side="right", fill="y")
+
+		сам.текстКод.config(yscrollcommand=скроллВерт.set)
+		сам.текстКод.pack(expand=True, fill='both')
