@@ -30,7 +30,8 @@ class тРамкаВерх(тРамка):
 		file_name = fd.askopenfilename(filetypes=(("Оберон файлы", "*.o7"),
 													 ("Текстовые файлы", "*.txt;*.me"),
 																("Все файлы", "*.*") ))
-		f = open(file_name, 'r', encoding='utf-8')
-		сИсх = f.read()
-		f.close()
-		сам.__root.дисп.Исх_Открыть(сИсх)
+		if file_name:
+			f = open(file_name, 'r', encoding='utf-8')
+			сИсх = f.read()
+			f.close()
+			сам.__root.дисп.Исх_Открыть(сИсх)
