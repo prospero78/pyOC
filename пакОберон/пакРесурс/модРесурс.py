@@ -32,5 +32,6 @@ class тРесурс:
 			сам.app['build'] = "Cборка"
 			сам.winMain['log'] = 'Лог'
 			сам.winMain['mnuFile'] = 'Файл'
+			сам.winMain['mnuAnaliz'] = 'Анализ'
 			сам.winMain['mnuExit'] = 'Выход'
 			сам.winMain['mnuOpen'] = 'Отрыть...'
