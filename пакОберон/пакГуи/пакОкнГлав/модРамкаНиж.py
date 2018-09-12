@@ -9,5 +9,5 @@ class тРамкаНиж(тРамкаНадпись):
       self.__root = root
       тРамкаНадпись.__init__(self, master, text = root.рес.winMain['log'])
       self.pack(side="bottom", expand=True, fill='x')
-      self.лог = тТекст(self, relief='sunken', border=3, bg='white', height=5)
+      self.лог = тТекст(self, relief='sunken', border=3, bg='white', height=10)
       self.лог.pack(expand = True, fill = 'both')
