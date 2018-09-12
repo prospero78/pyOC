@@ -35,3 +35,5 @@ class тРесурс:
 			сам.winMain['mnuAnaliz'] = 'Анализ'
 			сам.winMain['mnuExit'] = 'Выход'
 			сам.winMain['mnuOpen'] = 'Отрыть...'
+			сам.winMain['mnuHelp'] = 'Справка'
+			сам.winMain['mnuHelpShow'] = 'Показать справку...'
