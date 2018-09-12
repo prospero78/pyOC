@@ -28,7 +28,7 @@ class тРесурс:
 		if lang == "ru":
 			сам.Компилировать = "Компилировать"
 			сам.app['name']  = 'Компилятор Oberon-07'
-			сам.app['name1'] = 'Oberon-07'
+			сам.app['name1'] = '\u262d Oberon-07'
 			сам.app['build'] = "Cборка"
 			сам.winMain['log'] = 'Лог'
 			сам.winMain['mnuFile'] = 'Файл'
