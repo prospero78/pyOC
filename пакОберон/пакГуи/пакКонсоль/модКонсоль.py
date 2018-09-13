@@ -115,11 +115,11 @@ class тКонсоль(тРамкаНадпись):
 		рес = сам.__оберон.рес
 
 		сам.редЛог.insert('end', "\n         ", "_normal_")
-		сам.редЛог.insert('end', "     " + рес.app['name']+"     ", "_head_")
+		сам.редЛог.insert('end', "     " + рес.app['name']+"      ", "_head_")
 		сам.редЛог.insert('end', "\n", "_normal_")
 
 		сам.редЛог.insert('end', "         ", "_normal_")
-		сам.редЛог.insert('end', " KBK Techniks ltd. 2018 BSD-2 ", "_head_")
+		сам.редЛог.insert('end', " KBK Techniks ltd. 2018  BSD-2 ", "_head_")
 		сам.редЛог.insert('end', "\n", "_normal_")
 
 		сам.редЛог.insert('end', "         ", "_normal_")
