@@ -8,8 +8,9 @@ from tkinter import LabelFrame as тРамкаНадпись, Text as тТекс
 		Scrollbar as тПолзунок
 
 class тКонсоль(тРамкаНадпись):
-	def __init__(сам, пОберон, пПредок):
+	def __init__(сам, пОберон, пПредок, пОтладка):
 		сам.__оберон = пОберон
+		сам.__бОтладка = пОтладка
 		тРамкаНадпись.__init__(сам, пПредок, text = пОберон.рес.winMain['log'])
 		сам.pack(side="bottom", expand=True, fill='x')
 
@@ -37,8 +38,15 @@ class тКонсоль(тРамкаНадпись):
 		сам.редЛог.tag_config('_source_', font=("Consolas", 11, ), foreground="#0F0", \
 				background="#000")
 
-		сам.редЛог.tag_config('_error_', font=("Consolas", 11, ), foreground="FB0", \
+		сам.редЛог.tag_config('_error_', font=("Consolas", 11, ), foreground="#FB0", \
 				background="#F00")
+
+		сам.редЛог.tag_config('_debug_', font=("Consolas", 11, ), foreground="#444", \
+				background="#000")
+
+	@property
+	def бОтладка(сам):
+		return сам.__бОтладка
 
 	def Проверить(сам, пбУсл:bool, пСообщ:str)->None:
 		if type(пбУсл) != bool:
@@ -52,7 +60,7 @@ class тКонсоль(тРамкаНадпись):
 
 	def Ошибка(сам, пОшибка:str)->None:
 		if type(пОшибка) == str:
-			сам.редЛог.insert("end", пОшибка+, "_error_")
+			сам.редЛог.insert("end", пОшибка, "_error_")
 			сам.редЛог.insert('end', "\n", "_normal_")
 		else:
 			сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
@@ -60,13 +68,21 @@ class тКонсоль(тРамкаНадпись):
 
 	def Печать(сам, пСообщ:str)->None:
 		if type(пСообщ) == str:
-			сам.редЛог.insert("end", пСообщ+, "_normal_")
+			сам.редЛог.insert("end", пСообщ, "_normal_")
 			сам.редЛог.insert('end', "\n", "_normal_")
 		else:
 			сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
 
+	def Отладить(сам, пСообщ:str)->None:
+		if сам.бОтладка:
+			if type(пСообщ) == str:
+				сам.редЛог.insert("end", пСообщ, "_debug_")
+				сам.редЛог.insert('end', "\n", "_normal_")
+			else:
+				сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
+
 	def Исх_Печать(сам, пСообщ:str)->None:
-		if if type(пСообщ) == str:
+		if type(пСообщ) == str:
 			сам.редЛог.insert("end", пСообщ+"\n", "_source_")
 			сам.редЛог.insert('end', "\n", "_normal_")
 		else:
