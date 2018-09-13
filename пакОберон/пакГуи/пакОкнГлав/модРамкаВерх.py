@@ -10,7 +10,7 @@ class тРамкаВерх(тРамка):
 		сам.__оберон = пОберон
 		сам.__предок = предок
 		тРамка.__init__(сам, предок, relief='sunken', border=1)
-		сам.pack(side="top", expand=True, fill='x')
+		сам.pack(side="top", fill='x')
 
 
 		сам.кнпФайл = тКнпМну(сам, text=пОберон.рес.winMain['mnuFile'], relief='raised')
