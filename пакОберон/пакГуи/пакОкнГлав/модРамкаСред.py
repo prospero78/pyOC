@@ -9,7 +9,7 @@ class тРамкаСред(тРамка):
 		сам.__root = root
 		сам.__master = master
 		тРамка.__init__(сам, master)
-		сам.pack(expand=True, fill='both')
+		сам.pack(side='top', expand=True, fill='both')
 
 		сам.текстКод = тТекст(сам, font="Consolas 11")
 		скроллВерт   = тСкроллБар(сам, command=сам.текстКод.yview)
