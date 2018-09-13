@@ -11,6 +11,8 @@ class тКонсоль(тРамкаНадпись):
 	def __init__(сам, пОберон, пПредок, пОтладка):
 		сам.__оберон = пОберон
 		сам.__бОтладка = пОтладка
+		сам.__бОшибка = False # устанавлявает состояние ошибки исходник
+		сам.__бОшВнутр = False # внутренняя ошибка компилятора
 		тРамкаНадпись.__init__(сам, пПредок, text = пОберон.рес.winMain['log'])
 		сам.pack(side="bottom", expand=True, fill='x')
 
@@ -41,12 +43,23 @@ class тКонсоль(тРамкаНадпись):
 		сам.редЛог.tag_config('_error_', font=("Consolas", 11, ), foreground="#FB0", \
 				background="#F00")
 
+		сам.редЛог.tag_config('_errin_', font=("Consolas", 11, "italic"), foreground="#FB0", \
+				background="#F00")
+
 		сам.редЛог.tag_config('_debug_', font=("Consolas", 11, ), foreground="#444", \
 				background="#000")
 
 	@property
-	def бОтладка(сам):
+	def бОтладка(сам)->bool:
 		return сам.__бОтладка
+
+	@property
+	def бОшибка(сам)->bool:
+		return сам.__бОшибка
+
+	@property
+	def бОшВнутр(сам):
+		return сам.__бОшВнутр
 
 	def Проверить(сам, пбУсл:bool, пСообщ:str)->None:
 		if type(пбУсл) != bool:
@@ -59,12 +72,21 @@ class тКонсоль(тРамкаНадпись):
 			сам.Ошибка(пСообщ)
 
 	def Ошибка(сам, пОшибка:str)->None:
+		сам.__бОшибка = True
 		if type(пОшибка) == str:
 			сам.редЛог.insert("end", пОшибка, "_error_")
 			сам.редЛог.insert('end', "\n", "_normal_")
 		else:
 			сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
-		sys.exit()
+		#sys.exit()
+
+	def ОшВнутр(сам, пОшибка:str)->None:
+		сам.__бОшВнутр = True
+		if type(пОшибка) == str:
+			сам.редЛог.insert("end", пОшибка, "_errin_")
+			сам.редЛог.insert('end', "\n", "_normal_")
+		else:
+			сам.Ошибка("тКонсоль.ОшВнутр(): пСообщ должен быть str, type="+str(type(пСообщ)))
 
 	def Печать(сам, пСообщ:str)->None:
 		if type(пСообщ) == str:
