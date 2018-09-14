@@ -238,3 +238,11 @@ class тСлово:
 	def род(сам)->str:
 		#TODO: переделать род в int
 		return сам.__род
+
+	@property
+	def бОшВнутр(сам):
+		return сам.__бОшВнутр
+
+	@property
+	def бОшИсх(сам):
+		return сам.__бОшИсх
