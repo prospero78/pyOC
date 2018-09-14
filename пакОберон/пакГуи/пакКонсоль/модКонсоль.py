@@ -43,8 +43,8 @@ class тКонсоль(тРамкаНадпись):
 		сам.редЛог.tag_config('_error_', font=("Consolas", 11, ), foreground="#FB0", \
 				background="#F00")
 
-		сам.редЛог.tag_config('_errin_', font=("Consolas", 11, "italic"), foreground="#FB0", \
-				background="#F00")
+		сам.редЛог.tag_config('_errin_', font=("Consolas", 11, "italic"), foreground="#FF0", \
+				background="#800")
 
 		сам.редЛог.tag_config('_debug_', font=("Consolas", 11, ), foreground="#444", \
 				background="#000")
@@ -63,53 +63,53 @@ class тКонсоль(тРамкаНадпись):
 
 	def Проверить(сам, пбУсл:bool, пСообщ:str)->None:
 		if type(пбУсл) != bool:
-			сам.Ошибка("тКонсоль.Проверить(): пбУсл должен быть bool, type="+ \
+			сам.ОшВнутр("тКонсоль.Проверить(): ошибка компилятора. пбУсл должен быть bool, type="+ \
 					str(type(пбУсл)))
 			if type(пОшибка) != str:
-				сам.Ошибка("тКонсоль.Проверить(): пСообщ должен быть str, type="+ \
+				сам.Ошибка("тКонсоль.Проверить(): ошибка компилятора. пСообщ должен быть str, type="+ \
 						str(type(пСообщ)))
 		if not пбУсл:
 			сам.Ошибка(пСообщ)
 
 	def Ошибка(сам, пОшибка:str)->None:
 		сам.__бОшибка = True
-		if type(пОшибка) == str:
-			сам.редЛог.insert("end", пОшибка, "_error_")
-			сам.редЛог.insert('end', " \n\n", "_normal_")
-		else:
-			сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
-		#sys.exit()
+		if type(пОшибка) != str:
+			сам.ОшВнутр("тКонсоль.Ошибка(): ошибка компилятора. пОшибка должен быть str, type="+str(type(пОшибка)))
+			return
+		сам.редЛог.insert("end", пОшибка, "_error_")
+		сам.редЛог.insert('end', " \n\n", "_normal_")
 
 	def ОшВнутр(сам, пОшибка:str)->None:
 		сам.__бОшВнутр = True
-		if type(пОшибка) == str:
-			сам.редЛог.insert("end", пОшибка, "_errin_")
+		if type(пОшибка) != str:
+			сам.редЛог.insert("end", "тКонсоль.ОшВнутр(): пСообщ должен быть str, type="+str(type(пСообщ)), "_errin_")
 			сам.редЛог.insert('end', " \n", "_normal_")
-		else:
-			сам.Ошибка("тКонсоль.ОшВнутр(): пСообщ должен быть str, type="+str(type(пСообщ)))
+			return
+		сам.редЛог.insert("end", пОшибка, "_errin_")
+		сам.редЛог.insert('end', " \n", "_normal_")
 
 	def Печать(сам, пСообщ:str)->None:
-		if type(пСообщ) == str:
-			сам.редЛог.insert("end", пСообщ, "_normal_")
-			сам.редЛог.insert('end', "\n", "_normal_")
-		else:
-			сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
+		if type(пСообщ) != str:
+			сам.ОшВнутр("тКонсоль.Печать(): ошибка компилятора. пСообщ должен быть str, type="+str(type(пСообщ)))
+			return
+		сам.редЛог.insert("end", пСообщ, "_normal_")
+		сам.редЛог.insert('end', "\n", "_normal_")
 
 	def Отладить(сам, пСообщ:str)->None:
+		if type(пСообщ) != str:
+			сам.ОшВнутр("тКонсоль.Печать(): ошибка компилятора. пСообщ должен быть str, type="+str(type(пСообщ)))
+			return
 		if сам.бОтладка:
-			if type(пСообщ) == str:
-				сам.редЛог.insert("end", пСообщ, "_debug_")
-				сам.редЛог.insert('end', "\n", "_normal_")
-			else:
-				сам.Ошибка("тКонсоль.Печать(): пСообщ должен быть str, type="+str(type(пСообщ)))
+			сам.редЛог.insert("end", пСообщ, "_debug_")
+			сам.редЛог.insert('end', "\n", "_normal_")
 
 	def Исх_Печать(сам, пСообщ:str)->None:
-		if type(пСообщ) == str:
-			сам.редЛог.insert("end", пСообщ+"\n", "_source_")
-			сам.редЛог.insert('end', "\n", "_normal_")
-		else:
-			сам.Ошибка("тКонсоль.Исх_Печать(): пСообщ должен быть str, type="+\
+		if type(пСообщ) != str:
+			сам.Ошибка("тКонсоль.Исх_Печать(): ошибка компилятора. пСообщ должен быть str, type="+\
 					str(type(пСообщ)))
+			return
+		сам.редЛог.insert("end", пСообщ+"\n", "_source_")
+		сам.редЛог.insert('end', "\n", "_normal_")
 
 	def Шапка_Печать(сам)->None:
 		рес = сам.__оберон.рес
