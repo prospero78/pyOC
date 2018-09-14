@@ -46,20 +46,20 @@ class тКонсоль(тРамкаНадпись):
 		сам.редЛог.tag_config('_errin_', font=("Consolas", 11, "italic"), foreground="#FF0", \
 				background="#800")
 
-		сам.редЛог.tag_config('_debug_', font=("Consolas", 11, ), foreground="#444", \
+		сам.редЛог.tag_config('_debug_', font=("Consolas", 11, ), foreground="#666", \
 				background="#000")
 
 	@property
 	def бОтладка(сам)->bool:
 		return сам.__бОтладка
 
-	@property
-	def бОшибка(сам)->bool:
-		return сам.__бОшибка
+	# @property
+	# def бОшибка(сам)->bool:
+		# return сам.__бОшибка
 
-	@property
-	def бОшВнутр(сам):
-		return сам.__бОшВнутр
+	# @property
+	# def бОшВнутр(сам)->bool:
+		# return сам.__бОшВнутр
 
 	def Проверить(сам, пбУсл:bool, пСообщ:str)->None:
 		if type(пбУсл) != bool:
@@ -72,16 +72,16 @@ class тКонсоль(тРамкаНадпись):
 			сам.Ошибка(пСообщ)
 
 	def Ошибка(сам, пОшибка:str)->None:
-		сам.__бОшибка = True
 		if type(пОшибка) != str:
 			сам.ОшВнутр("тКонсоль.Ошибка(): ошибка компилятора. пОшибка должен быть str, type="+str(type(пОшибка)))
+			сам.__бОшибка = True
 			return
 		сам.редЛог.insert("end", пОшибка, "_error_")
 		сам.редЛог.insert('end', " \n\n", "_normal_")
 
 	def ОшВнутр(сам, пОшибка:str)->None:
-		сам.__бОшВнутр = True
 		if type(пОшибка) != str:
+			сам.__бОшВнутр = True
 			сам.редЛог.insert("end", "тКонсоль.ОшВнутр(): пСообщ должен быть str, type="+str(type(пСообщ)), "_errin_")
 			сам.редЛог.insert('end', " \n", "_normal_")
 			return
