@@ -12,10 +12,10 @@ class тРесурс:
 		сам.Язык_Уст()
 
 	def Шапка_Уст(сам):
-		сам.app['date']  = "2018-09-13"
-		сам.app['time']  = "15:55"
+		сам.app['date']  = "2018-09-14"
+		сам.app['time']  = "15:43"
 		сам.app['build'] = "Build"
-		сам.app['build_num'] = "1012"
+		сам.app['build_num'] = "1034"
 
 	def Язык_Уст(сам, lang = "ru"):
 		if True:
@@ -26,7 +26,7 @@ class тРесурс:
 			сам.winMain['mnuOpen'] = 'Open...'
 
 		if lang == "ru":
-			сам.Компилировать = "Компилировать"
+			сам.компиляция = "Компиляция "
 			сам.app['name']  = 'Компилятор Oberon-07'
 			сам.app['name1'] = '\u262d Oberon-07'
 			сам.app['build'] = "Cборка"
