@@ -41,7 +41,7 @@ class тКонсоль(тРамкаНадпись):
 				background="#000")
 
 		сам.редЛог.tag_config('_error_', font=("Consolas", 11, ), foreground="#FB0", \
-				background="#F00")
+				background="#404")
 
 		сам.редЛог.tag_config('_errin_', font=("Consolas", 11, "italic"), foreground="#FF0", \
 				background="#800")
