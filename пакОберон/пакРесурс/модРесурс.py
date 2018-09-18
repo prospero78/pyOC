@@ -12,10 +12,10 @@ class тРесурс:
 		сам.Язык_Уст()
 
 	def Шапка_Уст(сам):
-		сам.app['date']  = "2018-09-14"
-		сам.app['time']  = "15:43"
+		сам.app['date']  = "2018-09-18"
+		сам.app['time']  = "08:21"
 		сам.app['build'] = "Build"
-		сам.app['build_num'] = "1034"
+		сам.app['build_num'] = "1072"
 
 	def Язык_Уст(сам, lang = "ru"):
 		if True:
