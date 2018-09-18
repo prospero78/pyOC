@@ -18,13 +18,9 @@ class тКонсоль:
 		сам.Шапка()
 		#сам.Печать("Консоль активирована")
 
-	def Проверить(сам, пбУсл:bool, пСообщ:str)->None:
-		if not пбУсл:
-			сам.Ошибка(пСообщ)
 
 	def Ошибка(сам, пСообщ:str)->None:
 		print(Style.NORMAL+Fore.LIGHTYELLOW_EX+Back.RED+пСообщ)
-		sys.exit()
 
 	def Печать(сам, пСообщ:str)->None:
 		if type(пСообщ) == str:
@@ -34,21 +30,3 @@ class тКонсоль:
 
 	def Исх_Печать(сам, пСообщ:str)->None:
 		print(Style.NORMAL+Fore.GREEN+пСообщ)
-
-	def Шапка(сам)->None:
-		if sys.platform == "win32":
-			os.system("cls")
-		else:
-			os.system("clear")
-		стрСообщ :str= "\n               " + сам.рес.app['name'] + "       \n"
-		стрСообщ+= "         KBK Techniks ltd. 2018 BSD-2     \n"
-		стрСообщ+= "         "+сам.рес.app['date']+" "+сам.рес.app['time']+" "+сам.рес.app['build']+" " +сам.рес.app['build_num']+"      "
-		# это вроде не работает?
-		мКонс.ansi.clear_screen()
-		# это надо потестить
-		#for i in range(300):
-		#   мКонс.ansi.clear_line()
-		print(Style.BRIGHT+Fore.LIGHTWHITE_EX+Back.LIGHTBLUE_EX+стрСообщ)
-		print(Style.RESET_ALL)
-		print()
-		#time.sleep(2)
