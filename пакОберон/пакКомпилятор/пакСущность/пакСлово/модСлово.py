@@ -44,6 +44,8 @@ class тСлово:
 							"INTEGER", "CHAR", "SET", "REAL", "VAR", "POINTER", "TO", \
 							"ARRAY", "OF", "BEGIN", "END", "PROCEDURE", "FOR", \
 							"WHILE", "DO", "RECORD", "IS" ]
+	__slots__ = ("__оберон", "__конс", "__исх", "__род", "ош", "__строка", \
+						"__номер", "коорд", "__стрИсх")
 	def __init__(сам, пОберон, пИсх, пСтрока):
 		def пСтрока_Проверить():
 			if type(пСтрока) != str:
@@ -231,11 +233,3 @@ class тСлово:
 	def род(сам)->str:
 		#TODO: переделать род в int
 		return сам.__род
-
-	@property
-	def бОшВнутр(сам):
-		return сам.ош.бВнутр
-
-	@property
-	def бОшИсх(сам):
-		return сам.ош.бИсх
