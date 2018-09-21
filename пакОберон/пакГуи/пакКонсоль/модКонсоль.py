@@ -23,7 +23,7 @@ class тКонсоль(тРамкаНадпись):
 
 		цвет_фон = "#000"
 		цвет_лит = "#EEE"
-		сам.редЛог = тТекст(сам, relief='sunken', border=3, height=10,\
+		сам.редЛог = тТекст(сам, relief='sunken', border=3, height=20,\
 									background=цвет_фон, foreground=цвет_лит,\
 									font="Consolas 11")
 		сам.редЛог.pack(expand = True, fill = 'both')
